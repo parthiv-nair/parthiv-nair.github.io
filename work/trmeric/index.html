@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#fafbf9">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; frame-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>Private portfolio</title>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;height:100%;background:#fafbf9;color:#202620;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}[hidden]{display:none!important}
+    #gate{min-height:100%;display:grid;place-items:center;padding:28px}.panel{width:100%;max-width:390px}.eyebrow{font-size:11px;font-weight:650;letter-spacing:.16em;text-transform:uppercase;color:#6c786d;margin:0 0 18px}h1{font-size:36px;line-height:1.12;letter-spacing:-.045em;font-weight:550;margin:0 0 15px}.intro{font-size:15px;line-height:1.6;color:#637064;margin:0 0 30px}
+    label{display:block;font-size:13px;font-weight:550;margin-bottom:9px}input{display:block;width:100%;padding:14px;border:1px solid #c9d0c9;border-radius:7px;background:#fff;font:inherit;color:#202620}input:focus{outline:2px solid #3459bb;outline-offset:3px}button{cursor:pointer;font:inherit;border:0;border-radius:7px}#unlock{width:100%;padding:14px;margin-top:15px;background:#3459bb;color:#fff;font-size:14px;font-weight:550}#unlock:disabled{opacity:.65;cursor:wait}#message{min-height:42px;font-size:13px;line-height:1.5;color:#7f3939;margin:14px 0 0}.note{border-top:1px solid #e0e5df;padding-top:18px;font-size:12px;line-height:1.65;color:#738074}#view{position:fixed;inset:0;width:100%;height:100%;border:0;background:#fafbf9}#lock{position:fixed;right:18px;bottom:18px;z-index:10;padding:10px 15px;background:#202620;color:#fff;box-shadow:0 2px 15px #0002;font-size:12px}
+  </style>
+  <script src="/unlock.js" defer></script>
+</head>
+<body>
+  <main id="gate"><section class="panel" aria-labelledby="heading">
+    <p class="eyebrow">Private preview</p><h1 id="heading">A work in progress.</h1>
+    <p class="intro">Enter your password to open the portfolio.</p>
+    <form id="unlock-form"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required autofocus><button id="unlock" type="submit">Unlock portfolio</button></form>
+    <p id="message" role="status" aria-live="polite"></p>
+    <p class="note">The portfolio is encrypted. Unlocking happens in this browser; the password is never sent to GitHub.</p>
+    <noscript><p>JavaScript is needed to decrypt this portfolio.</p></noscript>
+  </section></main>
+  <iframe id="view" title="Portfolio" hidden></iframe><button id="lock" type="button" hidden>Lock portfolio</button>
+</body>
+</html>
